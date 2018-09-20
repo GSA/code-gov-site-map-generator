@@ -1,0 +1,24 @@
+{
+  "name": "@code.gov/site-map-generator",
+  "version": "1.0.0",
+  "description": "Generates Sitemap.xml for Code.gov",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSA/code-gov-site-map-generator.git"
+  },
+  "author": "Daniel J. Dufour",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/GSA/code-gov-site-map-generator/issues"
+  },
+  "homepage": "https://github.com/GSA/code-gov-site-map-generator#readme",
+  "dependencies": {
+    "@code.gov/api-client": "^0.1.1",
+    "xmlbuilder": "^10.0.0"
+  },
+  "private": "true"
+}
