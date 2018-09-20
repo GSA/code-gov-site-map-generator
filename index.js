@@ -59,8 +59,8 @@ client.repos({ size: 1e7 }).then(data => {
 
   const xml = urlset.end({ pretty: true });
 
-  fs.writeFileSync('Sitemap.xml', xml, 'utf-8');
+  fs.writeFileSync('sitemap.xml', xml, 'utf-8');
 
-  console.log('Wrote Sitemap.xml');
+  console.log('Wrote sitemap.xml');
 
 });
