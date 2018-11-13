@@ -26,34 +26,33 @@ urlset.att('xmlns:image', 'http://www.google.com/schemas/sitemap-image/1.1');
 urlset.att('xmlns:video', 'http://www.google.com/schemas/sitemap-video/1.1');
 
 createUrl(urlset, 'https://code.gov', 'daily', 1);
-createUrl(urlset, 'https://code.gov/#!/policy-guide/docs/overview/introduction', 'monthly', .95);
-createUrl(urlset, 'https://code.gov/#!/browse-projects', 'daily', .9);
-createUrl(urlset, 'https://code.gov/#!/help-wanted', 'daily', .8);
-createUrl(urlset, 'https://code.gov/#!/policy-guide/docs/overview/tracking-progress', 'monthly', .7);
-createUrl(urlset, 'https://code.gov/#!/policy-guide/docs/compliance/dashboard', 'monthly', .8);
-createUrl(urlset, 'https://code.gov/#!/policy-guide/docs/compliance/procurement', 'monthly', .7);
-createUrl(urlset, 'https://code.gov/#!/policy-guide/docs/compliance/inventory-code', 'monthly', .7);
-createUrl(urlset, 'https://code.gov/#!/policy-guide/docs/compliance/inventory-code/tools/validate-schema', 'monthly', .7);
-createUrl(urlset, 'https://code.gov/#!/policy-guide/docs/compliance/inventory-code/tools/upgrade-schema', 'monthly', .7);
-createUrl(urlset, 'https://code.gov/#!/policy-guide/docs/open-source/introduction', 'monthly', .7);
-createUrl(urlset, 'https://code.gov/#!/policy-guide/docs/open-source/resources', 'monthly', .7);
-createUrl(urlset, 'https://code.gov/#!/policy-guide/docs/open-source/measuring-code', 'monthly', .7);
-createUrl(urlset, 'https://code.gov/#!/policy-guide/docs/open-source/licensing', 'monthly', .7);
-createUrl(urlset, 'https://code.gov/#!/policy-guide/policy/introduction', 'monthly', .7);
-createUrl(urlset, 'https://code.gov/#!/policy-guide/policy/objectives', 'monthly', .7);
-createUrl(urlset, 'https://code.gov/#!/policy-guide/policy/scope', 'monthly', .7);
-createUrl(urlset, 'https://code.gov/#!/policy-guide/policy/solutions-analysis', 'monthly', .7);
-createUrl(urlset, 'https://code.gov/#!/policy-guide/policy/code-reuse', 'monthly', .7);
-createUrl(urlset, 'https://code.gov/#!/policy-guide/policy/open-source', 'monthly', .7);
-createUrl(urlset, 'https://code.gov/#!/policy-guide/policy/exceptions', 'monthly', .7);
-createUrl(urlset, 'https://code.gov/#!/policy-guide/policy/implementation', 'monthly', .7);
-createUrl(urlset, 'https://code.gov/#!/policy-guide/policy/appendix', 'monthly', .7);
+createUrl(urlset, 'https://code.gov/about/overview/introduction', 'monthly', .95);
+createUrl(urlset, 'https://code.gov/browse-projects', 'daily', .9);
+createUrl(urlset, 'https://code.gov/open-tasks', 'daily', .8);
+createUrl(urlset, 'https://code.gov/about/overview/tracking-progress', 'monthly', .7);
+createUrl(urlset, 'https://code.gov/about/compliance/dashboard', 'monthly', .8);
+createUrl(urlset, 'https://code.gov/about/compliance/procurement', 'monthly', .7);
+createUrl(urlset, 'https://code.gov/about/compliance/inventory-code', 'monthly', .7);
+createUrl(urlset, 'https://code.gov/about/compliance/inventory-code/validate-schema', 'monthly', .7);
+createUrl(urlset, 'https://code.gov/about/open-source/introduction', 'monthly', .7);
+createUrl(urlset, 'https://code.gov/about/open-source/resources', 'monthly', .7);
+createUrl(urlset, 'https://code.gov/about/open-source/measuring-code', 'monthly', .7);
+createUrl(urlset, 'https://code.gov/about/open-source/licensing', 'monthly', .7);
+createUrl(urlset, 'https://code.gov/policy-guide/introduction', 'monthly', .7);
+createUrl(urlset, 'https://code.gov/policy-guide/objectives', 'monthly', .7);
+createUrl(urlset, 'https://code.gov/policy-guide/scope', 'monthly', .7);
+createUrl(urlset, 'https://code.gov/policy-guide/solutions-analysis', 'monthly', .7);
+createUrl(urlset, 'https://code.gov/policy-guide/code-reuse', 'monthly', .7);
+createUrl(urlset, 'https://code.gov/policy-guide/open-source', 'monthly', .7);
+createUrl(urlset, 'https://code.gov/policy-guide/exceptions', 'monthly', .7);
+createUrl(urlset, 'https://code.gov/policy-guide/implementation', 'monthly', .7);
+createUrl(urlset, 'https://code.gov/policy-guide/appendix', 'monthly', .7);
 
 client.repos({ size: 1e7 }).then(data => {
 
   console.log("repos:", data.repos);
   data.repos.forEach(repo => {
-    const projurl = `https://code.gov/#!/explore-code/agencies/${repo.agency.acronym}/repos/${repo.repoID}`;
+    const projurl = `https://code.gov/projects/${repo.repoID}`;
     createUrl(urlset, projurl, 'monthly', .5);
   });
 
