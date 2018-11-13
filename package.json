@@ -19,6 +19,5 @@
   "dependencies": {
     "@code.gov/api-client": "^0.1.1",
     "xmlbuilder": "^10.0.0"
-  },
-  "private": "true"
+  }
 }
