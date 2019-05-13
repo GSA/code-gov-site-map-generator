@@ -1,6 +1,9 @@
 const CodeGovAPIClient = require('@code.gov/api-client/src/index.js').CodeGovAPIClient;
 const builder = require('xmlbuilder');
 const fs = require('fs');
+const dotenv = require('dotenv');
+dotenv.config(); // needed to make node look for env vars in the .env file
+
 
 const createUrl = (urlset, loc, changefreq, priority) => {
   const url = urlset.ele('url');
@@ -51,6 +54,8 @@ createUrl(urlset, 'https://code.gov/policy-guide/appendix', 'monthly', .7);
 client.repos({ size: 1e7 }).then(data => {
 
   console.log("repos:", data.repos);
+  console.log(`${data.repos.length} projects were added.`);
+
   data.repos.forEach(repo => {
     const projurl = `https://code.gov/projects/${repo.repoID}`;
     createUrl(urlset, projurl, 'monthly', .5);
@@ -61,5 +66,4 @@ client.repos({ size: 1e7 }).then(data => {
   fs.writeFileSync('sitemap.xml', xml, 'utf-8');
 
   console.log('Wrote sitemap.xml');
-
 });
