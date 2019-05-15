@@ -14,11 +14,11 @@ To run this app locally you'll need a code.gov API key.  If you don't have one, 
 
 Once you have an API key, clone the repo and run the `npm install` command in the project's root directory to install all of the project’s dependencies.
 
-Run this terminal command: `cp .example.env .env`
+Run this terminal command: `cp env.example .env`
 
 Replace `[your api key goes here]` in the `.env` file with your API key
 
-Run the `node index.js` terminal command to run the sitemap generation script.
+Run the `npm run generate` terminal command to run the sitemap generation script.
 
 There are more than 6000 projects currently in the project database. The API keys you get from [developers.code.gov](https://developers.code.gov/key.html) have a default result limit of 1000 projects. You'll need to get your result limit raised in order to return all projects in the database.
 
