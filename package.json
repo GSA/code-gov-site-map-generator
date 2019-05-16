@@ -18,6 +18,7 @@
   "homepage": "https://github.com/GSA/code-gov-site-map-generator#readme",
   "dependencies": {
     "@code.gov/api-client": "^0.3.3",
+    "dotenv": "^8.0.0",
     "xmlbuilder": "^10.0.0"
   }
 }
