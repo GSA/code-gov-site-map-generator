@@ -4,6 +4,7 @@ const fs = require('fs');
 const dotenv = require('dotenv');
 
 const { getAllRepoJson } = require('./utils/repoJSON');
+const { writeDataToFile } = require('./utils/fileUtils');
 
 dotenv.config(); // needed to make node look for env vars in the .env file
 
@@ -72,3 +73,12 @@ getAllRepoJson(client).then(data => {
 .catch((err) => {
   throw new Error(err);
 });
+
+// getAllRepoJson(client).then(data => {
+//   writeDataToFile('repos', data);
+// })
+// .catch((err) => {
+//   throw new Error(err);
+// });
+
+
