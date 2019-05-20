@@ -2,8 +2,10 @@ const CodeGovAPIClient = require('@code.gov/api-client/src/index.js').CodeGovAPI
 const builder = require('xmlbuilder');
 const fs = require('fs');
 const dotenv = require('dotenv');
-dotenv.config(); // needed to make node look for env vars in the .env file
 
+const { getAllRepoJson } = require('./utils/repoJSON');
+
+dotenv.config(); // needed to make node look for env vars in the .env file
 
 const createUrl = (urlset, loc, changefreq, priority) => {
   const url = urlset.ele('url');
@@ -51,89 +53,22 @@ createUrl(urlset, 'https://code.gov/policy-guide/exceptions', 'monthly', .7);
 createUrl(urlset, 'https://code.gov/policy-guide/implementation', 'monthly', .7);
 createUrl(urlset, 'https://code.gov/policy-guide/appendix', 'monthly', .7);
 
-async function getAllRepoJson(page=1, size=1000, reposArray=[]) {
-  const result = await client.repos({ size, page });
-  const stopBool = result.repos.length + reposArray.length === result.total;
+getAllRepoJson(client).then(data => {
+  console.log("repos:", data);
+  console.log("repo count:", data.length);
+  console.log(`${data.length} projects were added.`);
 
-  if (stopBool) {
-    return reposArray.concat(result.repos);
-  }
-
-  return await getAllRepoJson(page + 1, size, reposArray.concat(result.repos));
-}
-
-async function checkFunction() {
-  return await getAllRepoJson();
-}
-
-function getPromiseArray(totalApiCalls, size) {
-  const promiseArray = [];
-
-  for (let i = 2; i <= totalApiCalls; i++) {
-    promiseArray.push(client.repos({ size, page: i }));
-  }
-
-  return promiseArray;
-}
-
-function getAllRepoJsonWithPromiseAll() {
-  const size = 1000;
-
-  return client.repos({ size, page: 1 }).then((data) => {
-    const reposLeft = data.total - data.repos.length;
-    let reposArray = data.repos;
-
-    if (reposLeft === 0) {
-      return reposArray;
-    }
-
-    const totalApiCalls = Math.ceil(data.total / size);
-
-    return Promise.all(getPromiseArray(totalApiCalls, size))
-      .then((results) => {
-        results.forEach((result) => {
-          reposArray = reposArray.concat(result.repos);
-      });
-      return Promise.resolve(reposArray);
-    });
-  })
-  .catch((err) => {
-    throw new Error(err);
+  data.forEach(repo => {
+    const projurl = `https://code.gov/projects/${repo.repoID}`;
+    createUrl(urlset, projurl, 'monthly', .5);
   });
-}
 
-async function checkFunction() {
-  return await getAllRepoJson();
-}
+  const xml = urlset.end({ pretty: true });
 
-function checkFunction2() {
-  return getAllRepoJsonWithPromiseAll();
-}
+  fs.writeFileSync('sitemap.xml', xml, 'utf-8');
 
-checkFunction().then((result) => {
-  console.log(result.length);
+  console.log('Wrote sitemap.xml');
+})
+.catch((err) => {
+  throw new Error(err);
 });
-
-checkFunction2().then((result) => {
-  console.log(result.length);
-}).catch((err) => {
-  console.log(err);
-});
-
-// client.repos({ size: 1000, page: 7 }).then(data => {
-//
-//   console.log("repos:", data.repos);
-//   console.log("repo count:", data.total);
-//   console.log(`${data.repos.length} projects were added.`);
-//
-//   data.repos.forEach(repo => {
-//     const projurl = `https://code.gov/projects/${repo.repoID}`;
-//     createUrl(urlset, projurl, 'monthly', .5);
-//   });
-//
-//   const xml = urlset.end({ pretty: true });
-//
-//   fs.writeFileSync('sitemap.xml', xml, 'utf-8');
-//
-//   console.log('Wrote sitemap.xml');
-// });
