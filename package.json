@@ -4,8 +4,7 @@
   "description": "Generates Sitemap.xml for Code.gov",
   "main": "index.js",
   "scripts": {
-    "generate": "node index.js",
-    "generate:test-data": "mkdir __mocks__ && node ./tasks/generateTestData.js"
+    "generate": "node index.js"
   },
   "repository": {
     "type": "git",
