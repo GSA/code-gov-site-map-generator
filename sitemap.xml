@@ -7656,6 +7656,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://code.gov/projects/epa_dmsd_1_aqs_data_analysis_tools</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://code.gov/projects/gsa_u_s_general_services_administration_1_arcgis_map</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -8427,6 +8432,11 @@
   </url>
   <url>
     <loc>https://code.gov/projects/gsa_18f_1_cf_sinatra_ci</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://code.gov/projects/epa_osim_1_cfm_id_generation_comptox_chemicals_dashboard_structures_paper</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -10756,6 +10766,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://code.gov/projects/epa_dmsd_1_epa_omega_model</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://code.gov/projects/epa_ord_1_epa_r_workshop_2017</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -10772,6 +10787,11 @@
   </url>
   <url>
     <loc>https://code.gov/projects/epa_ord_1_epanet_legacy_user_interface</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://code.gov/projects/epa_osim_1_epanet_manual</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -11467,6 +11487,11 @@
   </url>
   <url>
     <loc>https://code.gov/projects/doe_lawrence_berkeley_national_laboratory_lbnl_1_fireworks</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://code.gov/projects/epa_osim_1_fishratez</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -12537,6 +12562,11 @@
   </url>
   <url>
     <loc>https://code.gov/projects/epa_ord_1_hivescience</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://code.gov/projects/epa_osim_1_hms</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
