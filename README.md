@@ -20,8 +20,6 @@ Replace `[your api key goes here]` in the `.env` file with your API key
 
 Run the `npm run generate` terminal command to run the sitemap generation script.
 
-There are more than 6000 projects currently in the project database. The API keys you get from [developers.code.gov](https://developers.code.gov/key.html) have a default result limit of 1000 projects. You'll need to get your result limit raised in order to return all projects in the database.
-
 ## Contributing
 
 See [CONTRIBUTING](CONTRIBUTING.md) for additional information.
