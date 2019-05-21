@@ -1,4 +1,3 @@
-const repos = require('../__mocks__/repos.json');
 const { writeDataToFile } = require ('./fileUtils');
 
 function paginateResults(data) {
@@ -15,4 +14,6 @@ function paginateResults(data) {
   writeDataToFile('pagedRepos', repoPageObj);
 }
 
-paginateResults(repos);
+module.exports = Object.freeze({
+  paginateResults
+});

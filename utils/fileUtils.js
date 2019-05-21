@@ -17,6 +17,5 @@ function writeDataToFile(name, data) {
 }
 
 module.exports = Object.freeze({
-  resolveOutputName,
   writeDataToFile
 });

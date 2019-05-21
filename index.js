@@ -54,7 +54,7 @@ createUrl(urlset, 'https://code.gov/policy-guide/exceptions', 'monthly', .7);
 createUrl(urlset, 'https://code.gov/policy-guide/implementation', 'monthly', .7);
 createUrl(urlset, 'https://code.gov/policy-guide/appendix', 'monthly', .7);
 
-getAllRepoJson(client).then(data => {
+getAllRepoJson(client).then((data) => {
   console.log("repos:", data);
   console.log("repo count:", data.length);
   console.log(`${data.length} projects were added.`);
@@ -73,12 +73,3 @@ getAllRepoJson(client).then(data => {
 .catch((err) => {
   throw new Error(err);
 });
-
-// getAllRepoJson(client).then(data => {
-//   writeDataToFile('repos', data);
-// })
-// .catch((err) => {
-//   throw new Error(err);
-// });
-
-
