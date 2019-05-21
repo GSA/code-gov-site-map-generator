@@ -11,6 +11,8 @@ const client = new CodeGovAPIClient({
   debug: true
 });
 
+// the generated json is meant to be used in a future manual mock of the client.repos
+// method, following the mock strategy used here: https://jestjs.io/docs/en/tutorial-async
 getAllRepoJson(client).then((data) => {
   paginateResults(data);
 })
