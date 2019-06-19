@@ -9,16 +9,20 @@ To learn more about the project, check out this [blog post](https://www.whitehou
 
 Code.gov is an open source project, so we invite your contributions, be it in the form of code, design, or ideas.
 
-## Quick Setup Instructions
-To run this app locally you'll need a code.gov API key.  If you don't have one, go to the following url to obtain one: https://developers.code.gov/key.html
+## Setup instructions
+To run this app locally you'll need a Code.gov API key. If you don't have one, go to the [https://developers.code.gov/key.html](https://developers.code.gov/key.html) to obtain one.
 
 Once you have an API key, clone the repo and run the `npm install` command in the project's root directory to install all of the project’s dependencies.
 
-Run this terminal command: `cp env.example .env`
+Run `cp env.example .env` to create a template .env file in the root directory of the project 
 
-Replace `[your api key goes here]` in the `.env` file with your API key
+Replace “[your api key goes here]” in the .env file with your API key
 
-Run the `npm run generate` terminal command to run the sitemap generation script.
+## Generating a new sitemap.xml
+
+Run the `npm run generate` terminal command to run the sitemap generation script. Commit and push the new sitemap to a new branch. Submit a PR to merge this branch into master. After the PR is merged, run `git checkout master` and `git pull origin master` to update your local repository.
+
+Then follow the instructions in the [Component Release Management](https://github.com/GSA/code-gov-front-end/wiki/Component-release-management) wiki page of [`code-gov-front-end`](https://github.com/GSA/code-gov-front-end) to publish the new sitemap to npm. This step is required to ensure that code-gov-front-end consumes the latest version of this component.
 
 ## Contributing
 
