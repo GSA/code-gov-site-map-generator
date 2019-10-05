@@ -26,9 +26,9 @@ Then follow the instructions in the [Component Release Management](https://githu
 
 ## Questions?
 
-Twitter: @CodeDotGov <br />
-Email: code@gsa.gov<br />
-LinkedIn: code-gov<br />
+Twitter: [@CodeDotGov](https://twitter.com/CodeDotGov) <br />
+Email: [code@gsa.gov](mailto:code@gsa.gov) <br />
+LinkedIn: [code-gov](https://www.linkedin.com/company/code-gov)<br />
 Join our #opensource-public Slack channel: https://chat.18f.gov/<br />
 
 ## Contributing
