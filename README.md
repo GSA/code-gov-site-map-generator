@@ -24,6 +24,13 @@ Run the `npm run generate` terminal command to run the sitemap generation script
 
 Then follow the instructions in the [Component Release Management](https://github.com/GSA/code-gov-front-end/wiki/Component-release-management) wiki page of [`code-gov-front-end`](https://github.com/GSA/code-gov-front-end) to publish the new sitemap to npm. This step is required to ensure that code-gov-front-end consumes the latest version of this component.
 
+## Questions?
+
+Twitter: [@CodeDotGov](https://twitter.com/CodeDotGov) <br />
+Email: [code@gsa.gov](mailto:code@gsa.gov) <br />
+LinkedIn: [code-gov](https://www.linkedin.com/company/code-gov)<br />
+Join our #opensource-public Slack channel: https://chat.18f.gov/<br />
+
 ## Contributing
 
 See [CONTRIBUTING](CONTRIBUTING.md) for additional information.
