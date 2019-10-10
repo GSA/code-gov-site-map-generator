@@ -20,9 +20,12 @@ Replace “[your api key goes here]” in the .env file with your API key
 
 ## Generating a new sitemap.xml
 
+Follow the instructions in the [Component Release Management](https://github.com/GSA/code-gov-front-end/wiki/Component-release-management) wiki page of [`code-gov-front-end`](https://github.com/GSA/code-gov-front-end) to release an update to this component.
+
 Run the `npm run generate` terminal command to run the sitemap generation script. Once generated, verify that the repository count matches the project on the `Browse Projects` page on [production](https://code.gov/browse-projects?page=1&size=10&sort=data_quality). Commit and push the new sitemap to a new branch. Submit a PR to merge this branch into master. After the PR is merged, run `git checkout master` and `git pull origin master` to update your local repository.
 
-Then follow the instructions in the [Component Release Management](https://github.com/GSA/code-gov-front-end/wiki/Component-release-management) wiki page of [`code-gov-front-end`](https://github.com/GSA/code-gov-front-end) to publish the new sitemap to npm. This step is required to ensure that code-gov-front-end consumes the latest version of this component.
+Publish the new sitemap to npm following the instructions in the [Component Release Management](https://github.com/GSA/code-gov-front-end/wiki/Component-release-management). This step is required to ensure that code-gov-front-end consumes the latest version of this component.
+
 
 ## Questions?
 
