@@ -1,6 +1,6 @@
 {
   "name": "@code.gov/site-map-generator",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Generates Sitemap.xml for Code.gov",
   "main": "index.js",
   "scripts": {
